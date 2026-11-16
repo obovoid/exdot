@@ -1,0 +1,122 @@
+[gd_scene format=3 uid="uid://d0tc702l0u4sc"]
+
+[ext_resource type="Script" uid="uid://ye73mr8ofe4d" path="res://addons/exdot/scenes/console_dock.gd" id="1_505fj"]
+[ext_resource type="Texture2D" uid="uid://cdou8melo8n74" path="res://addons/exdot/assets/brush.svg" id="1_wcolh"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_y0r1h"]
+content_margin_left = 5.0
+content_margin_top = 5.0
+content_margin_right = 5.0
+content_margin_bottom = 5.0
+bg_color = Color(0.16078432, 0.16078432, 0.16078432, 1)
+corner_radius_top_left = 2
+corner_radius_top_right = 2
+corner_radius_bottom_right = 2
+corner_radius_bottom_left = 2
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_7oc0d"]
+content_margin_left = 5.0
+content_margin_top = 5.0
+content_margin_right = 5.0
+content_margin_bottom = 5.0
+bg_color = Color(0.12156863, 0.12156863, 0.12156863, 1)
+corner_radius_top_left = 5
+corner_radius_top_right = 5
+corner_radius_bottom_right = 5
+corner_radius_bottom_left = 5
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_wwt5s"]
+bg_color = Color(0.16078432, 0.16078432, 0.16078432, 1)
+
+[node name="ConsoleDock" type="Control" unique_id=1547963864 node_paths=PackedStringArray("line_edit", "suggestions", "item_list", "console", "clear_console_button")]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+script = ExtResource("1_505fj")
+line_edit = NodePath("ConsoleBorder/ConsoleBackground/Layout/InteractionBar/CommandLine/CommandInputField")
+suggestions = NodePath("ConsoleBorder/ConsoleBackground/Layout/ConsoleAndSuggestions/Suggestions")
+item_list = NodePath("ConsoleBorder/ConsoleBackground/Layout/ConsoleAndSuggestions/Suggestions/ItemList")
+console = NodePath("ConsoleBorder/ConsoleBackground/Layout/ConsoleAndSuggestions/Console")
+clear_console_button = NodePath("ConsoleBorder/ConsoleBackground/Layout/InteractionBar/ClearConsoleButton")
+
+[node name="ConsoleBorder" type="Panel" parent="." unique_id=885283734]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_y0r1h")
+
+[node name="ConsoleBackground" type="Panel" parent="ConsoleBorder" unique_id=1985028434]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_7oc0d")
+
+[node name="Layout" type="VBoxContainer" parent="ConsoleBorder/ConsoleBackground" unique_id=818262598]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 6
+
+[node name="ConsoleAndSuggestions" type="VBoxContainer" parent="ConsoleBorder/ConsoleBackground/Layout" unique_id=1580222123]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="Console" type="RichTextLabel" parent="ConsoleBorder/ConsoleBackground/Layout/ConsoleAndSuggestions" unique_id=112294733]
+layout_mode = 2
+size_flags_vertical = 3
+focus_mode = 2
+bbcode_enabled = true
+scroll_following = true
+threaded = true
+selection_enabled = true
+
+[node name="Suggestions" type="PanelContainer" parent="ConsoleBorder/ConsoleBackground/Layout/ConsoleAndSuggestions" unique_id=175775566]
+visible = false
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_wwt5s")
+
+[node name="ItemList" type="ItemList" parent="ConsoleBorder/ConsoleBackground/Layout/ConsoleAndSuggestions/Suggestions" unique_id=1878383680]
+clip_contents = false
+layout_mode = 2
+auto_height = true
+wraparound_items = false
+
+[node name="InteractionBar" type="HBoxContainer" parent="ConsoleBorder/ConsoleBackground/Layout" unique_id=1549803456]
+layout_mode = 2
+alignment = 1
+
+[node name="ClearConsoleButton" type="Button" parent="ConsoleBorder/ConsoleBackground/Layout/InteractionBar" unique_id=992148293]
+layout_mode = 2
+offset_transform_enabled = true
+offset_transform_position = Vector2(2, 0)
+tooltip_text = "Clear all messages in the console"
+theme_override_constants/icon_max_width = 16
+theme_override_icons/icon = ExtResource("1_wcolh")
+flat = true
+icon_alignment = 1
+
+[node name="CommandLine" type="VBoxContainer" parent="ConsoleBorder/ConsoleBackground/Layout/InteractionBar" unique_id=1119664175]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="CommandInputField" type="LineEdit" parent="ConsoleBorder/ConsoleBackground/Layout/InteractionBar/CommandLine" unique_id=713298206]
+custom_minimum_size = Vector2(0, 45)
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_font_sizes/font_size = 23
+placeholder_text = "type a command..."
+emoji_menu_enabled = false

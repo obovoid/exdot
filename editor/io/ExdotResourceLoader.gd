@@ -3,13 +3,13 @@ class_name ExdotResourceLoader
 extends ResourceFormatLoader
 
 func _get_recognized_extensions() -> PackedStringArray:
-	return PackedStringArray(["exdot"])
+	return PackedStringArray(["exd", "exdot"])
 
 func _handles_type(type: StringName) -> bool:
 	return type == &"Resource" or type == &"Script"
 
 func _get_resource_type(path: String) -> String:
-	if path.get_extension().to_lower() == "exdot":
+	if path.get_extension().to_lower() in _get_recognized_extensions():
 		return "Script"
 	
 	return ""

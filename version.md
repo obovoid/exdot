@@ -1,3 +1,12 @@
+version="0.1.1"
+changelog="""
+# Changelog
+
+## 0.1.1
++ added *.exd as the main file format. *.exdot will be kept as a long form file extension name
++ added single quote char support
+- removed some leftover logs"""
+
 version="0.1.0"
 changelog="""
 # Changelog

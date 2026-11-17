@@ -19,7 +19,7 @@ func _get_name() -> String:
 	return "exdot"
 
 func _get_supported_languages() -> PackedStringArray:
-	return PackedStringArray(["exdot"])
+	return PackedStringArray(["exd", "exdot"])
 	
 var highlights : Dictionary
 var text : String

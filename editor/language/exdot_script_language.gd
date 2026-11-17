@@ -4,12 +4,12 @@ extends ScriptLanguageExtension
 var script_class := preload("./ExdotScriptResource.gd")
 
 func _get_comment_delimiters() -> PackedStringArray:
-	print("Exdot: Comment delimiters requested!")
 	return PackedStringArray(["#"])
 
 func _get_string_delimiters() -> PackedStringArray:
 	return PackedStringArray([
-		"\" \""
+		"\" \"",
+		"' '"
 	])
 
 func _get_reserved_words() -> PackedStringArray:

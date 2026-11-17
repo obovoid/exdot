@@ -7,7 +7,7 @@ func _recognize(resource: Resource) -> bool:
 
 func _get_recognized_extensions(resource: Resource) -> PackedStringArray:
 	if resource is ExdotScriptResource:
-		return PackedStringArray(["exdot"])
+		return PackedStringArray(["exd", "exdot"])
 	return PackedStringArray([])
 
 func _save(resource: Resource, path: String, flags: int) -> Error:

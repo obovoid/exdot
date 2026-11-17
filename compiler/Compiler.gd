@@ -88,7 +88,7 @@ func build_all() -> void:
 	source_directory.list_dir_begin()
 	for file: String in source_directory.get_files():
 		var extension = file.get_extension()
-		if extension != "exdot": continue
+		if extension != "exdot" and extension != "exd": continue
 		tokenize_file(source_directory.get_current_dir() + "/" + file)
 
 func build(files: Array = []) -> void:
@@ -97,7 +97,7 @@ func build(files: Array = []) -> void:
 	
 	for file in files:
 		var extension = file.get_extension()
-		if extension != "exdot":
+		if extension != "exdot" and extension != "exd":
 			ExdotConsole.error("Failed to build file '%s'. File must be a EXDOT file!" % file)
 			return
 		

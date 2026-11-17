@@ -6,7 +6,7 @@ func _popup_menu(paths: PackedStringArray) -> void:
 		return
 	
 	var path := paths[0]
-	if path.get_extension() != "exdot":
+	if path.get_extension() != "exd" and path.get_extension() != "exdot":
 		return
 	
 	add_context_menu_item("Open Exdot", _open_exdot.bind(path))

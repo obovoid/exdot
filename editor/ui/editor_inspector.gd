@@ -32,11 +32,7 @@ func _open_exdot(path: String) -> void:
 
 		path = ResourceUID.get_id_path(uid)
 
-	print("Loading: ", path)
-	print("Exists: ", FileAccess.file_exists(path))
-
 	var script := ResourceLoader.load(path, "Script") as Script
-
 	if script == null:
 		push_error(XERROR.INSPECTOR.ERR_SCRIPT_LOAD + path)
 		return

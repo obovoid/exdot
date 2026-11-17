@@ -17,7 +17,7 @@ Exdot aims to provide:
 
 ## Example
 
-```exdot
+```exd
 using { Input }
 
 readonly export var speed: Float = 5.0

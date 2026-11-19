@@ -69,8 +69,7 @@ Exdot is currently highly experimental.
 Syntax, compiler behavior, APIs, and project structure may change without notice. The current focus is on defining the language, building the compiler frontend, and improving editor integration.
 
 ## Documentation
-More detailed documentation will be available in the GitHub Wiki.
-The Wiki will cover language syntax, type rules, functions, Node bindings, lifecycle events, Godot integration, compiler behavior, and other Exdot-specific concepts.
+you can see the documentation [here](https://obovoid.github.io/exdot/)
 
 ## Contributing
 Contributions, bug reports, and suggestions are welcome.
